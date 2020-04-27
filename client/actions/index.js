@@ -23,7 +23,7 @@ export function getData () {
 export function addData (data) {
   return (dispatch) => {
     return request
-      .get('/api/v1/data/add')
+      .put('/api/v1/data/add')
       .send(data)
       .then(res => {
         console.log(res)

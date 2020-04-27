@@ -28,10 +28,17 @@ class Form extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
+    this.props.dispatch(addData(this.state))
+    this.setState({
+      name: '',
+      color: '',
+      animal: ''
+    })
   }
   render () {
     return (
       <div>
+        <Link to='/data'>See Data</Link>
         <form>
           <label>Name</label> &nbsp; <input type='text' value={this.state.name} onChange={this.handleNameChange} />
           <br />
@@ -41,7 +48,6 @@ class Form extends React.Component {
           <br />
           <button type='submit' onClick={this.handleSubmit} >Submit</button>
         </form>
-        <Link to='/data'>See Data</Link>
       </div>
     )
   }

@@ -10,18 +10,17 @@ class ShowData extends React.Component {
   render () {
     return (
       <div>
+        <Link to='/' >Home</Link>
         {console.log(this.props.getData)}
         {this.props.getData.map(item =>{
           return <div key={item.id}>
-            <p>Hey {item.name}</p>
-            <p>you like {item.color}</p>
-            <p>You also like {item.animal}</p>
-            <br />
-            <br />
+              <p>Hey {item.name}</p>
+              <p>you like {item.color}</p>
+              <p>You also like {item.animal}</p>
+              <br />
+              <br />
             </div>
         })}
-        <h1>Hello.pt2</h1>
-        <Link to='/' >Home</Link>
       </div>
     )
   }
