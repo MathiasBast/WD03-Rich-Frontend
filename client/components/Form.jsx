@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { addData } from '../actions'
 
 class Form extends React.Component {
   state= {
@@ -26,7 +28,6 @@ class Form extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    console.log(this.state)
   }
   render () {
     return (
@@ -46,4 +47,4 @@ class Form extends React.Component {
   }
 }
 
-export default Form
+export default connect()(Form)

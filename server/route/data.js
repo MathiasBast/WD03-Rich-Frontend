@@ -5,6 +5,7 @@ const db = require('../db')
 router.get('/', (req, res) => {
   db.getData()
     .then(apiRes => {
+      console.log(apiRes)
       res.json(apiRes)
     })
 })

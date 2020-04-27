@@ -1,19 +1,32 @@
 import request from 'superagent'
 
-export const getData = () => {
-  return {
-    type: "GET_DATA"
+export const GET_DATA = 'GET_DATA'
+
+export function getData () {
+  console.log('1234')
+  return (dispatch) => {
+    return request
+      .get('/api/v1/data')
+      .then(res => {
+        console.log(res)
+        dispatch({
+          type: GET_DATA,
+          data: res.body
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 }
 
-export const 
-
-export function getData () {
+export function addData (data) {
   return (dispatch) => {
-    return Request
-      .get('/api/v1/data')
+    return request
+      .get('/api/v1/data/add')
+      .send(data)
       .then(res => {
-        dispatch(getData(res.body))
+        console.log(res)
       })
       .catch(err => {
         console.log(err)
